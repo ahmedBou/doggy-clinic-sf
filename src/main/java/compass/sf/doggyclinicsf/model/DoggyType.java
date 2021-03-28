@@ -1,13 +1,13 @@
 package compass.sf.doggyclinicsf.model;
 
 public class DoggyType {
-    private String name;
+    private String names;
 
     public String getName() {
-        return name;
+        return names;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String names) {
+        this.names = names;
     }
 }
