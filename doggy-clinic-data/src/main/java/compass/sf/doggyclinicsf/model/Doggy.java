@@ -1,7 +1,5 @@
 package compass.sf.doggyclinicsf.model;
 
-import org.springframework.boot.web.reactive.filter.OrderedWebFilter;
-
 import java.time.LocalDate;
 
 public class Doggy {
