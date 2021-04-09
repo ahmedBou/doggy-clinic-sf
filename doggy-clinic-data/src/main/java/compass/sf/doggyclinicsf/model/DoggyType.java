@@ -1,6 +1,6 @@
 package compass.sf.doggyclinicsf.model;
 
-public class DoggyType {
+public class DoggyType extends BaseEntity{
     private String names;
 
     public String getName() {

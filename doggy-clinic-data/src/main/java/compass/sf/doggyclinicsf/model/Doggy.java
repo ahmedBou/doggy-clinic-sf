@@ -2,7 +2,7 @@ package compass.sf.doggyclinicsf.model;
 
 import java.time.LocalDate;
 
-public class Doggy {
+public class Doggy extends BaseEntity{
     private DoggyType doggyType;
     private LocalDate birthDate;
     private Owner owner;
