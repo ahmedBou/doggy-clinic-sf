@@ -4,7 +4,7 @@
 
     <artifactId>doggy-clinic-sf</artifactId>
     <groupId>compass.sf</groupId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
 
     <modules>
         <module>doggy-clinic-data</module>
@@ -98,7 +98,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/ahmedBou/doggy-clinic-sf.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>doggy-clinic-sf-1.1</tag>
     </scm>
 
 </project>
