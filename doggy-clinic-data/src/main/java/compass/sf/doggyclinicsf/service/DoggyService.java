@@ -4,8 +4,6 @@ import compass.sf.doggyclinicsf.model.Doggy;
 
 import java.util.Set;
 
-public interface DoggyService {
-    Doggy findById(Long id);
-    Doggy save(Doggy doggy);
-    Set<Doggy> findAll();
+public interface DoggyService extends CrudService<Doggy, Long> {
+
 }
