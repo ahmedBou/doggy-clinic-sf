@@ -1,12 +1,10 @@
 package compass.sf.doggyclinicsf.service.map;
 
 import compass.sf.doggyclinicsf.model.Doggy;
-import compass.sf.doggyclinicsf.model.Owner;
 import compass.sf.doggyclinicsf.service.CrudService;
-
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Doggy, Long> implements CrudService<Doggy, Long> {
+public class DoggyServiceMap extends AbstractMapService<Doggy, Long> implements CrudService<Doggy, Long> {
 
 
     @Override

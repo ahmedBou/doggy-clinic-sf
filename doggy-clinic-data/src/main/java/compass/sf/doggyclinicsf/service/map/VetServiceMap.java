@@ -1,12 +1,12 @@
 package compass.sf.doggyclinicsf.service.map;
 
-import compass.sf.doggyclinicsf.model.Doggy;
+
 import compass.sf.doggyclinicsf.model.Vet;
-import compass.sf.doggyclinicsf.service.CrudService;
+import compass.sf.doggyclinicsf.service.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
