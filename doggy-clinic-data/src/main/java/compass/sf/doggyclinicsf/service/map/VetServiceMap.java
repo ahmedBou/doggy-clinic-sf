@@ -3,9 +3,11 @@ package compass.sf.doggyclinicsf.service.map;
 
 import compass.sf.doggyclinicsf.model.Vet;
 import compass.sf.doggyclinicsf.service.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override

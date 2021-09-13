@@ -4,18 +4,19 @@ import compass.sf.doggyclinicsf.model.Owner;
 import compass.sf.doggyclinicsf.model.Vet;
 import compass.sf.doggyclinicsf.service.OwnerService;
 import compass.sf.doggyclinicsf.service.VetService;
-import compass.sf.doggyclinicsf.service.map.OwnerMapService;
-import compass.sf.doggyclinicsf.service.map.VetServiceMap;
-import org.springframework.boot.CommandLineRunner;
 
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Dataloader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public Dataloader(){
-        ownerService = new OwnerMapService();
-        vetService = new VetServiceMap();
+    public Dataloader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override

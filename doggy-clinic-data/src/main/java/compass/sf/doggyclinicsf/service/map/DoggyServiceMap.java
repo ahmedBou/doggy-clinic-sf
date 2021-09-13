@@ -2,8 +2,11 @@ package compass.sf.doggyclinicsf.service.map;
 
 import compass.sf.doggyclinicsf.model.Doggy;
 import compass.sf.doggyclinicsf.service.CrudService;
+import org.springframework.stereotype.Service;
+
 import java.util.Set;
 
+@Service
 public class DoggyServiceMap extends AbstractMapService<Doggy, Long> implements CrudService<Doggy, Long> {
 
 
