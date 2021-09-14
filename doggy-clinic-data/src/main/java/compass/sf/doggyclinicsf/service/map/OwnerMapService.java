@@ -2,7 +2,6 @@ package compass.sf.doggyclinicsf.service.map;
 
 
 import compass.sf.doggyclinicsf.model.Owner;
-import compass.sf.doggyclinicsf.service.CrudService;
 import compass.sf.doggyclinicsf.service.OwnerService;
 import org.springframework.stereotype.Service;
 
