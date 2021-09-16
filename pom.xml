@@ -6,6 +6,7 @@
     <groupId>compass.sf</groupId>
     <version>1.2-SNAPSHOT</version>
 
+
     <modules>
         <module>doggy-clinic-data</module>
         <module>doggy-clinic-web</module>
@@ -29,38 +30,11 @@
         <jaxb.version>2.3.0</jaxb.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+
     </properties>
 
     <dependencies>
 
-
-        <!-- https://mvnrepository.com/artifact/org.webjars/webjars-locator-core -->
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>webjars-locator-core</artifactId>
-            <version>0.35</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>jquery</artifactId>
-            <version>3.5.1</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.webjars/jquery-ui -->
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>jquery-ui</artifactId>
-            <version>1.12.1</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>bootstrap</artifactId>
-            <version>3.3.6</version>
-        </dependency>
 
 
 
@@ -84,34 +58,6 @@
     <build>
         <plugins>
 
-            <plugin>
-                <groupId>ro.isdc.wro4j</groupId>
-                <artifactId>wro4j-maven-plugin</artifactId>
-                <version>1.7.9</version>
-                <executions>
-                    <execution>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
-                    <cssDestinationFolder>${project.build.directory}/classes/static/resources/css</cssDestinationFolder>
-                    <wroFile>${basedir}/src/main/wro/wro.xml</wroFile>
-                    <extraConfigFile>${basedir}/src/main/wro/wro.properties</extraConfigFile>
-                    <contextFolder>${basedir}/src/main/less</contextFolder>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.webjars</groupId>
-                        <artifactId>bootstrap</artifactId>
-                        <version>3.3.6</version>
-                    </dependency>
-                </dependencies>
-
-            </plugin>
 
 
 
@@ -160,6 +106,8 @@
             </plugin>
         </plugins>
     </build>
+
+
 
     <scm>
         <developerConnection>scm:git:https://github.com/ahmedBou/doggy-clinic-sf.git</developerConnection>
