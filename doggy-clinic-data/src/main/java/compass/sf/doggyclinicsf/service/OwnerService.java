@@ -1,6 +1,7 @@
 package compass.sf.doggyclinicsf.service;
 
 import compass.sf.doggyclinicsf.model.Owner;
+import org.springframework.stereotype.Service;
 
 
 import java.util.Set;

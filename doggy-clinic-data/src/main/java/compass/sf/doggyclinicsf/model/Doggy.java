@@ -3,9 +3,20 @@ package compass.sf.doggyclinicsf.model;
 import java.time.LocalDate;
 
 public class Doggy extends BaseEntity{
+    private String name;
     private DoggyType doggyType;
     private LocalDate birthDate;
     private Owner owner;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
 
 
     public DoggyType getDoggyType() {
