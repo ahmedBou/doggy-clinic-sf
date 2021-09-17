@@ -1,7 +1,9 @@
 package compass.sf.doggyclinicsf.bootstrap;
 
+import compass.sf.doggyclinicsf.model.DoggyType;
 import compass.sf.doggyclinicsf.model.Owner;
 import compass.sf.doggyclinicsf.model.Vet;
+import compass.sf.doggyclinicsf.service.DoggyTypeService;
 import compass.sf.doggyclinicsf.service.OwnerService;
 import compass.sf.doggyclinicsf.service.VetService;
 
@@ -13,11 +15,15 @@ public class Dataloader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final DoggyTypeService doggyTypeService;
 
-    public Dataloader(OwnerService ownerService, VetService vetService) {
+    public Dataloader(OwnerService ownerService, VetService vetService, DoggyTypeService doggyTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.doggyTypeService = doggyTypeService;
     }
+
+
 
     @Override
     public void run(String... args) throws Exception {
@@ -53,6 +59,13 @@ public class Dataloader implements CommandLineRunner {
         vetService.save(vet2);
 
         System.out.println("Loaded Vets....");
+
+        DoggyType rottweiller = new DoggyType();
+        rottweiller.setName("pattu");
+
+        DoggyType savedDogType = doggyTypeService.save(rottweiller);
+
+
     }
 
 }
