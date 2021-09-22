@@ -1,13 +1,11 @@
 package compass.sf.doggyclinicsf.service.map;
 
-
 import compass.sf.doggyclinicsf.model.Doggy;
 import compass.sf.doggyclinicsf.model.Owner;
 import compass.sf.doggyclinicsf.service.DoggyService;
 import compass.sf.doggyclinicsf.service.DoggyTypeService;
 import compass.sf.doggyclinicsf.service.OwnerService;
 import org.springframework.stereotype.Service;
-
 import java.util.Set;
 
 @Service
