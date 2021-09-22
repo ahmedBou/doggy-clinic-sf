@@ -20,7 +20,7 @@ public class SpecialityMapService extends AbstractMapService<Speciality, Long> i
 
     @Override
     public Speciality save(Speciality object) {
-        return null;
+        return super.save(object);
     }
 
     @Override

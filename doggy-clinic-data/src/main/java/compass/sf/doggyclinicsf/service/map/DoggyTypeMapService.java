@@ -25,7 +25,7 @@ public class DoggyTypeMapService extends AbstractMapService<DoggyType, Long> imp
 
     @Override
     public DoggyType save(DoggyType object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override

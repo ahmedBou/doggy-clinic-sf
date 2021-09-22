@@ -35,6 +35,6 @@ public class DoggyServiceMap extends AbstractMapService<Doggy, Long> implements 
 
     @Override
     public Doggy save(Doggy object) {
-        return super.save(object.getId(),object);
+        return super.save(object);
     }
 }
