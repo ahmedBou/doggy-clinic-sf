@@ -22,7 +22,7 @@ public class Doggy extends BaseEntity{
     @JoinColumn(name = "owner_id")
     private Owner owner;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "doggy")
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Visit> visits = new HashSet<>();
 
     public Set<Visit> getVisits() {

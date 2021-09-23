@@ -43,7 +43,11 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
 
     }
-
+/*
+we are comparing using a HashMap implementation to persist data to vs.
+ using an SQL database. Through the SQL database, we're going to be using
+ JPA Hibernate for implementation for ORM
+ */
     @Override
     public Owner save(Owner object) {
         if(object != null){
