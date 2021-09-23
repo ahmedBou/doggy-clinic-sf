@@ -2,6 +2,8 @@ package compass.sf.doggyclinicsf.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name= "doggy")
@@ -19,6 +21,17 @@ public class Doggy extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private Owner owner;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "doggy")
+    private Set<Visit> visits = new HashSet<>();
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
+    }
 
     public String getName() {
         return name;
