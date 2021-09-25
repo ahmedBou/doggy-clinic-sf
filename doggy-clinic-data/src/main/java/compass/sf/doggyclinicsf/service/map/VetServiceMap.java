@@ -5,11 +5,13 @@ import compass.sf.doggyclinicsf.model.Speciality;
 import compass.sf.doggyclinicsf.model.Vet;
 import compass.sf.doggyclinicsf.service.SpecialtiesService;
 import compass.sf.doggyclinicsf.service.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     private final SpecialtiesService specialtiesService;
 

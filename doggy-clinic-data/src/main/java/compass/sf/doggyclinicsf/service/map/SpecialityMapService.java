@@ -2,11 +2,13 @@ package compass.sf.doggyclinicsf.service.map;
 
 import compass.sf.doggyclinicsf.model.Speciality;
 import compass.sf.doggyclinicsf.service.SpecialtiesService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialtiesService {
     @Override
     public Set<Speciality> findAll() {

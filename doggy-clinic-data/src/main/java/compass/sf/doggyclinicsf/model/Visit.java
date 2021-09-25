@@ -1,8 +1,16 @@
 package compass.sf.doggyclinicsf.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
+
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "visits")
 public class Visit extends BaseEntity{
@@ -16,27 +24,5 @@ public class Visit extends BaseEntity{
     @JoinColumn(name = "doggy_id")
     private Doggy dog;
 
-    public LocalDate getVisit() {
-        return visit;
-    }
 
-    public void setVisit(LocalDate visit) {
-        this.visit = visit;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Doggy getDog() {
-        return dog;
-    }
-
-    public void setDog(Doggy dog) {
-        this.dog = dog;
-    }
 }

@@ -5,10 +5,12 @@ import compass.sf.doggyclinicsf.model.Owner;
 import compass.sf.doggyclinicsf.service.DoggyService;
 import compass.sf.doggyclinicsf.service.DoggyTypeService;
 import compass.sf.doggyclinicsf.service.OwnerService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService{
 
 

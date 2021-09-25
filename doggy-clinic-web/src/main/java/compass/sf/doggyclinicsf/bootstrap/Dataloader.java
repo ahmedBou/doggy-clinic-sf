@@ -1,16 +1,12 @@
 package compass.sf.doggyclinicsf.bootstrap;
 
 import compass.sf.doggyclinicsf.model.*;
-import compass.sf.doggyclinicsf.service.DoggyTypeService;
-import compass.sf.doggyclinicsf.service.OwnerService;
-import compass.sf.doggyclinicsf.service.SpecialtiesService;
-import compass.sf.doggyclinicsf.service.VetService;
-
-
+import compass.sf.doggyclinicsf.service.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.Locale;
 
 @Component
 public class Dataloader implements CommandLineRunner {
@@ -19,16 +15,20 @@ public class Dataloader implements CommandLineRunner {
     private final VetService vetService;
     private final DoggyTypeService doggyTypeService;
     private final SpecialtiesService specialtiesService;
+    private final VisitService visitService;
 
     public Dataloader(OwnerService ownerService, VetService vetService,
-                      DoggyTypeService doggyTypeService, SpecialtiesService specialtiesService) {
+                      DoggyTypeService doggyTypeService,
+                      SpecialtiesService specialtiesService,
+                      VisitService visitService) {
+
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.doggyTypeService = doggyTypeService;
         this.specialtiesService = specialtiesService;
+        this.visitService = visitService;
+
     }
-
-
 
     @Override
     public void run(String... args) throws Exception {
@@ -37,14 +37,11 @@ public class Dataloader implements CommandLineRunner {
         if(count == 0){
             loadData();
         }
-
-
-
     }
 
     private void loadData() {
         DoggyType rottweiller = new DoggyType();
-        rottweiller.setName("rottweiller");
+        rottweiller.setNames("rottweiller");
         DoggyType savedDogType = doggyTypeService.save(rottweiller);
 
         Speciality radiology = new Speciality();
@@ -52,12 +49,16 @@ public class Dataloader implements CommandLineRunner {
 
         Speciality surgery = new Speciality();
         surgery.setDescription("Surgery");
+
         Speciality dentistry= new Speciality();
         dentistry.setDescription("Dentistry");
 
         Speciality savedRadiology = specialtiesService.save(radiology);
         Speciality savedSurgery = specialtiesService.save(surgery);
         Speciality savedDentistry = specialtiesService.save(dentistry);
+
+
+
 
 
         Owner owner1 = new Owner();
@@ -74,7 +75,10 @@ public class Dataloader implements CommandLineRunner {
         hamadaDog.setName("pattu");
         owner1.getDogs().add(hamadaDog);
 
+
+
         ownerService.save(owner1);
+
 
 
         Owner owner2 = new Owner();
@@ -85,6 +89,11 @@ public class Dataloader implements CommandLineRunner {
         ownerService.save(owner2);
         System.out.println("Loaded Owners....");
 
+        Visit rottVisit = new Visit();
+        rottVisit.setDog(hamadaDog);
+        rottVisit.setVisit(LocalDate.now());
+        rottVisit.setDescription("incredible pattu");
+        visitService.save(rottVisit);
         Vet vet1 = new Vet();
 
         vet1.setFirstName("bonnie");

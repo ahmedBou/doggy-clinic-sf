@@ -2,11 +2,13 @@ package compass.sf.doggyclinicsf.service.map;
 
 import compass.sf.doggyclinicsf.model.DoggyType;
 import compass.sf.doggyclinicsf.service.DoggyTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class DoggyTypeMapService extends AbstractMapService<DoggyType, Long> implements DoggyTypeService {
     @Override
     public Set<DoggyType> findAll() {
