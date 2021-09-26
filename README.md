@@ -1,3 +1,3 @@
 # doggy-clinic-sf
 
-spring framework app for pet clinic
+spring framework app for doggy clinic
