@@ -16,4 +16,10 @@ import javax.persistence.Table;
 public class DoggyType extends BaseEntity{
     @Column(name = "names")
     private String names;
+
+
+    @Override
+    public String toString() {
+        return names;
+    }
 }

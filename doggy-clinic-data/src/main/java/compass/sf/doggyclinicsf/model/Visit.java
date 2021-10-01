@@ -24,5 +24,4 @@ public class Visit extends BaseEntity{
     @JoinColumn(name = "doggy_id")
     private Doggy dog;
 
-
 }

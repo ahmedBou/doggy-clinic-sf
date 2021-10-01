@@ -7,6 +7,8 @@ import compass.sf.doggyclinicsf.service.DoggyTypeService;
 import compass.sf.doggyclinicsf.service.OwnerService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -79,6 +81,17 @@ we are comparing using a HashMap implementation to persist data to vs.
 
     @Override
     public Owner findByLastName(String lastName) {
+        return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        // todo -impl
+        System.out.println(" implement findAllByLastNameLike");
         return null;
     }
 }

@@ -64,7 +64,7 @@ public class Dataloader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Tom");
         owner1.setLastName("Jerry");
-        owner1.setAddress("jhedfjhfsdf");
+        owner1.setAddress("cité de chat maison 10");
         owner1.setCity("city");
         owner1.setTelephone("55666666");
 
@@ -75,16 +75,23 @@ public class Dataloader implements CommandLineRunner {
         hamadaDog.setName("pattu");
         owner1.getDogs().add(hamadaDog);
 
-
-
         ownerService.save(owner1);
 
 
 
         Owner owner2 = new Owner();
-
         owner2.setFirstName("Mono");
         owner2.setLastName("Six");
+        owner2.setAddress("123 Brickerel");
+        owner2.setCity("Miami");
+        owner2.setTelephone("1231231234");
+
+        Doggy monoDog = new Doggy();
+        monoDog.setName("turbo");
+        monoDog.setOwner(owner2);
+        monoDog.setBirthDate(LocalDate.now());
+        monoDog.setDoggyType(savedDogType);
+        owner2.getDogs().add(monoDog);
 
         ownerService.save(owner2);
         System.out.println("Loaded Owners....");
