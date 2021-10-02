@@ -17,11 +17,16 @@ public class Visit extends BaseEntity{
 
     @Column(name = "visit_Date")
     private LocalDate visit;
+
     @Column(name = "description")
     private String description;
 
     @ManyToOne
     @JoinColumn(name = "doggy_id")
     private Doggy dog;
+
+    public LocalDate getDate() {
+        return visit;
+    }
 
 }
