@@ -24,7 +24,9 @@ public class Owner extends Person{
         this.address = address;
         this.city = city;
         this.telephone = telephone;
-        this.dogs = dogs;
+        if((dogs != null)){
+            this.dogs = dogs;
+        }
     }
 
     @Column(name = "address")
@@ -39,5 +41,33 @@ public class Owner extends Person{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Doggy> dogs = new HashSet<>();
 
+    /**
+     * Return the Pet with the given name, or null if none found for this Owner.
+     *
+     * @param name to test
+     * @return true if pet name is already in use
+     */
+    public Doggy getDog(String name){
+        return getDog(name, false);
+    }
+    /**
+     * Return the Pet with the given name, or null if none found for this Owner.
+     *
+     * @param name to test
+     * @return true if pet name is already in use
+     */
+    public Doggy getDog(String name, boolean ignoreNew) {
+        name = name.toLowerCase();
+        for (Doggy dog : dogs) {
+            if (!ignoreNew || !dog.isNew()) {
+                String compName = dog.getName();
+                compName = compName.toLowerCase();
+                if (compName.equals(name)) {
+                    return dog;
+                }
+            }
+        }
+        return null;
+    }
 
 }

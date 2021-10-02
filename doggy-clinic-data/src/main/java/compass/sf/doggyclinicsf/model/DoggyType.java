@@ -10,13 +10,17 @@ import javax.persistence.Table;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 @Table(name="doggy_type")
 public class DoggyType extends BaseEntity{
     @Column(name = "names")
     private String names;
 
+    @Builder
+    public DoggyType(Long id, String names) {
+        super(id);
+        this.names = names;
+    }
 
     @Override
     public String toString() {
