@@ -1,5 +1,9 @@
 compass\sf\doggyclinicsf\DoggyClinicSfApplication.class
+compass\sf\doggyclinicsf\formatters\DogTypeFormatter.class
 compass\sf\doggyclinicsf\controller\IndexController.class
+compass\sf\doggyclinicsf\controller\VisitController.class
 compass\sf\doggyclinicsf\controller\OwnerController.class
 compass\sf\doggyclinicsf\bootstrap\Dataloader.class
+compass\sf\doggyclinicsf\controller\DoggyController.class
 compass\sf\doggyclinicsf\controller\VetController.class
+compass\sf\doggyclinicsf\controller\VisitController$1.class

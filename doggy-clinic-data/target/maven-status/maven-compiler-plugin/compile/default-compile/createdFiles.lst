@@ -5,6 +5,7 @@ compass\sf\doggyclinicsf\repositories\DoggyRepository.class
 compass\sf\doggyclinicsf\service\springDataJpa\DoggyTypeSdJpaService.class
 compass\sf\doggyclinicsf\repositories\SpecialtyRepository.class
 compass\sf\doggyclinicsf\repositories\OwnerRepository.class
+compass\sf\doggyclinicsf\model\Doggy$DoggyBuilder.class
 compass\sf\doggyclinicsf\service\SpecialtiesService.class
 compass\sf\doggyclinicsf\model\DoggyType$DoggyTypeBuilder.class
 compass\sf\doggyclinicsf\repositories\VisitRepository.class

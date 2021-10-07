@@ -1,6 +1,7 @@
 package compass.sf.doggyclinicsf.model;
 
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -36,6 +37,7 @@ public class Doggy extends BaseEntity{
     private DoggyType doggyType;
 
     @Column(name = "birth_date")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private LocalDate birthDate;
 
     @ManyToOne
